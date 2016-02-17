@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        title ByteTesting        
+    body
+        h1 welcome
+        
+        
+        
+        script(type='text/javascript').
+            var Configuration = {
+                host: "#{config.host}"
+            };
+            
+        script(type='text/javascript', src='/socket.io/socket.io.js')
+        script(type='text/javascript', src='/js/main.js')
+        

@@ -33,7 +33,7 @@ Config.read('config.json').then(function (json) {
 
             var runnerConfig = {
                 framework: 'jasmine',
-                specs: ['specs/**']
+                session: '12345678'
             };
 
             testrunner.run(runnerConfig).then(function () {

@@ -1,4 +1,8 @@
 {
+  "name": "bytetesting-server",
+  "author": "Sebastian Parwolowski <sebastian@bitwantsbyte.com>",  
+  "description": "Web testing suite based on webdriver.io",
+  "version": "0.0.1",   
   "dependencies": {
     "commander": "^2.9.0",
     "express": "^4.13.4",

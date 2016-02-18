@@ -3,6 +3,7 @@
 /// <reference path="browser/ambient/express/express.d.ts" />
 /// <reference path="browser/ambient/glob/glob.d.ts" />
 /// <reference path="browser/ambient/jasmine/jasmine.d.ts" />
+/// <reference path="browser/ambient/node-uuid/node-uuid.d.ts" />
 /// <reference path="browser/ambient/node/node.d.ts" />
 /// <reference path="browser/ambient/socket.io/socket.io.d.ts" />
 /// <reference path="browser/ambient/webdriverio/webdriverio.d.ts" />

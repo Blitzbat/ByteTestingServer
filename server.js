@@ -7,6 +7,7 @@ var merge = require('merge');
 var Config = require('./lib/configuration');
 var Q = require('q');
 var testrunner = require('./lib/runner/testRunner');
+var uuid = require('node-uuid');
 
 var serverConfig = {};
 
@@ -29,11 +30,15 @@ Config.read('config.json').then(function (json) {
     });
 
     io.on("connection", function (socket) {
-        socket.on("startRunner", function () {
-
+        console.log("Client connected");
+        
+        socket.on("startSession", function (data) {
+	        console.log("Starting session"); 
             var runnerConfig = {
                 framework: 'jasmine',
-                session: '12345678'
+                session: uuid.v4(),
+                socket: socket,
+                testData: data
             };
 
             testrunner.run(runnerConfig).then(function () {

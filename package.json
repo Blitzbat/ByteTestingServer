@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-jasmine": "^2.3.0"    
+    "gulp-codecov": "^2.0.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jasmine": "^2.3.0"
   }
 }

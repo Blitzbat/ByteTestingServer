@@ -1,9 +1,20 @@
 var gulp = require('gulp'),
-    jasmine = require('gulp-jasmine');
+    istanbul = require('gulp-istanbul'),
+    jasmine = require('gulp-jasmine'),
+    codecov = require('gulp-codecov');
 
-gulp.task('test', () => {
-   gulp.src('tests/**/*.js')
-   .pipe(jasmine()); 
+
+gulp.task('pre-test', () => {
+    return gulp.src(['lib/**/*.js'])
+	   .pipe(istanbul())
+       .pipe(istanbul.hookRequire()) 
+});
+
+gulp.task('test',['pre-test'], () => {
+    return gulp.src('tests/**/*.js')
+        .pipe(jasmine())
+        .pipe(istanbul())
+        .pipe(codecov());   
 });
 
 

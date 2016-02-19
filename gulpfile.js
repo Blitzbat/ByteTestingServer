@@ -6,16 +6,21 @@ var gulp = require('gulp'),
 
 gulp.task('pre-test', () => {
     return gulp.src(['lib/**/*.js'])
-	   .pipe(istanbul())
-       .pipe(istanbul.hookRequire()) 
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test',['pre-test'], () => {
+gulp.task('test', ['pre-test'], () => {
     return gulp.src('tests/**/*.js')
         .pipe(jasmine())
         .pipe(istanbul())
-        .pipe(codecov());   
+        .pipe(istanbul.writeReports())
+});
+
+gulp.task('codecove', ['test'], () => {
+    return gulp.src(['coverage/lcov.info'])
+        .pipe(codecov());
 });
 
 
-gulp.task('default', ['test']);
+gulp.task('default', ['codecove']);

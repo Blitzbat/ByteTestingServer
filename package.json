@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
+    "esprima": "^2.7.2",
     "express": "^4.13.4",
     "glob": "^7.0.0",
     "jade": "^1.11.0",
@@ -18,7 +19,12 @@
     "node-uuid": "^1.4.7",
     "node-zip": "^1.1.1",
     "q": "^1.4.1",
+    "rimraf": "^2.5.2",
     "socket.io": "^1.4.5",
     "webdriverio": "^4.0.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jasmine": "^2.3.0"    
   }
 }

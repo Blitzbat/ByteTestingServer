@@ -22,4 +22,6 @@ gulp.task('coveralls', ['test'], () => {
         .pipe(coveralls());
 });
 
+gulp.task('testlocal', ['test']);
+
 gulp.task('default', ['coveralls']);

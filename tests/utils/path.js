@@ -17,7 +17,22 @@ describe("PathUtil", () => {
         });
         done();
     });
-
+	
+    it('should return correct session path', () => {
+        var path = pathUtil.getSessionPath(SESSIONID);
+        expect(path).toBe(process.cwd()+'/sessions/'+SESSIONID);
+    });
+    
+    it('should return correct result path', () => {
+        var path =pathUtil.getResultPath(SESSIONID)
+        expect(path).toBe(process.cwd()+'/sessions/'+SESSIONID+"/result");
+    });
+    
+    it('should return correct spec path', () => {
+        var path = pathUtil.getSpecPath(SESSIONID) 
+        expect(path).toBe(process.cwd()+'/sessions/'+SESSIONID+"/specs");
+    });
+     
     it("should create session directory", (done) => {
         pathUtil.createSessionDirectory(SESSIONID).then(() => {
             fs.exists(pathUtil.getSessionPath(SESSIONID), (exsists) => {

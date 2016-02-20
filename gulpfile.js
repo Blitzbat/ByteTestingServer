@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     istanbul = require('gulp-istanbul'),
     jasmine = require('gulp-jasmine'),
-    codecov = require('gulp-codecov');
+    coveralls = require('gulp-coveralls');
 
 
 gulp.task('pre-test', () => {
@@ -17,10 +17,9 @@ gulp.task('test', ['pre-test'], () => {
         .pipe(istanbul.writeReports())
 });
 
-gulp.task('codecove', ['test'], () => {
-    return gulp.src(['coverage/lcov.info'])
-        .pipe(codecov());
+gulp.task('coveralls', ['test'], () => {
+    return gulp.src(['coverage/**/lcov.info'])
+        .pipe(coveralls());
 });
 
-
-gulp.task('default', ['codecove']);
+gulp.task('default', ['coveralls']);

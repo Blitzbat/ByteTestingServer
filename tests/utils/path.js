@@ -15,12 +15,12 @@ describe("PathUtil", () => {
         });
 
         it('should return correct result path', () => {
-            var path = pathUtil.getResultPath(SESSIONID)
+            var path = pathUtil.getResultPath(SESSIONID);
             expect(path).toBe(process.cwd() + '/sessions/' + SESSIONID + "/result");
         });
 
         it('should return correct spec path', () => {
-            var path = pathUtil.getSpecPath(SESSIONID)
+            var path = pathUtil.getSpecPath(SESSIONID);
             expect(path).toBe(process.cwd() + '/sessions/' + SESSIONID + "/specs");
         });
     });
@@ -31,10 +31,10 @@ describe("PathUtil", () => {
             pathUtil
                 .createBaseDirectory()
                 .then(() => {
-                    pathUtil.createSessionDirectory(SESSIONID)
+                    pathUtil.createSessionDirectory(SESSIONID);
                 })
                 .then(() => {
-                    pathUtil.createSpecDirectory(SESSIONID)
+                    pathUtil.createSpecDirectory(SESSIONID);
                 }).then(() => {
                     fs.writeFileSync(pathUtil.getSpecPath(SESSIONID) + "/spec1.js", "spec1");
                     fs.writeFileSync(pathUtil.getSpecPath(SESSIONID) + "/spec2.js", "spec2");
@@ -83,7 +83,7 @@ describe("PathUtil", () => {
         it("should fail on creating session directory", (done) => {
             pathUtil.createSessionDirectory(SESSIONID).then(() => {
             }, (err) => {
-                expect(err).toBeDefined()
+                expect(err).toBeDefined();
                 done();
             });
         });
@@ -91,7 +91,7 @@ describe("PathUtil", () => {
         it("should fail on creating result directory", (done) => {
             pathUtil.createResultDirectory(SESSIONID).then(() => {
             }, (err) => {
-                expect(err).toBeDefined()
+                expect(err).toBeDefined();
                 done();
             });
         });
@@ -99,7 +99,7 @@ describe("PathUtil", () => {
         it("should fail on creating spec directory", (done) => {
             pathUtil.createSpecDirectory(SESSIONID).then(() => {
             }, (err) => {
-                expect(err).toBeDefined()
+                expect(err).toBeDefined();
                 done();
             });
         });
@@ -155,7 +155,7 @@ describe("PathUtil", () => {
             jasmine.DEFAULT_TIMEOUT_INTERVAL = timeout;
             rimraf(process.cwd() + "/sessions", () => {
                 done();
-            })
+            });
         });
 
     });
